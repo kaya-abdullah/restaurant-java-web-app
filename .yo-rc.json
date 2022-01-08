@@ -58,6 +58,9 @@
       "ReservationComment",
       "Customer"
     ],
-    "lastLiquibaseTimestamp": 1641667904000
+    "lastLiquibaseTimestamp": 1641667904000,
+    "herokuAppName": "kaya-rest-app",
+    "herokuDeployType": "jar",
+    "herokuJavaVersion": "11"
   }
 }
