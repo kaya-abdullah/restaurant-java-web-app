@@ -1,0 +1,30 @@
+{
+  "restApp": {
+    "reservationComment": {
+      "home": {
+        "title": "Reservation Comments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Reservation Comment",
+        "createOrEditLabel": "Create or edit a Reservation Comment",
+        "notFound": "No Reservation Comments found"
+      },
+      "created": "A new Reservation Comment is created with identifier {{ param }}",
+      "updated": "A Reservation Comment is updated with identifier {{ param }}",
+      "deleted": "A Reservation Comment is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Reservation Comment {{ id }}?"
+      },
+      "detail": {
+        "title": "Reservation Comment"
+      },
+      "id": "ID",
+      "commentDate": "Comment Date",
+      "operatorNote": "Operator Note",
+      "reservation": "Reservation",
+      "help": {
+        "commentDate": "comment entry date",
+        "operatorNote": "Comment Detail"
+      }
+    }
+  }
+}

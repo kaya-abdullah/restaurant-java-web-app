@@ -1,0 +1,31 @@
+{
+  "restApp": {
+    "customer": {
+      "home": {
+        "title": "Customers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Customer",
+        "createOrEditLabel": "Skapa eller ändra en Customer",
+        "notFound": "No Customers found"
+      },
+      "created": "En ny Customer är skapad med id {{ param }}",
+      "updated": "En Customer är uppdaterad med id  {{ param }}",
+      "deleted": "En Customer är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Customer {{ id }}?"
+      },
+      "detail": {
+        "title": "Customer"
+      },
+      "id": "ID",
+      "fullName": "Full Name",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "help": {
+        "fullName": "Customer full name",
+        "phoneNumber": "Customer phone number",
+        "email": "Customer email"
+      }
+    }
+  }
+}

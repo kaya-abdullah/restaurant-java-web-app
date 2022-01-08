@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="location">
+      <h2 data-cy="locationDetailsHeading"><span jhiTranslate="restApp.location.detail.title">Location</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ location.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="restApp.location.streetAddress" [ngbTooltip]="'restApp.location.help.streetAddress' | translate"
+            >Street Address</span
+          >
+        </dt>
+        <dd>
+          <span>{{ location.streetAddress }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="restApp.location.postalCode" [ngbTooltip]="'restApp.location.help.postalCode' | translate">Postal Code</span>
+        </dt>
+        <dd>
+          <span>{{ location.postalCode }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="restApp.location.stateProvince" [ngbTooltip]="'restApp.location.help.stateProvince' | translate"
+            >State Province</span
+          >
+        </dt>
+        <dd>
+          <span>{{ location.stateProvince }}</span>
+        </dd>
+        <dt><span jhiTranslate="restApp.location.restaurant">Restaurant</span></dt>
+        <dd>
+          <div *ngIf="location.restaurant">
+            <a [routerLink]="['/restaurant', location.restaurant?.id, 'view']">{{ location.restaurant?.name }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restApp.location.city">City</span></dt>
+        <dd>
+          <div *ngIf="location.city">
+            <a [routerLink]="['/city', location.city?.id, 'view']">{{ location.city?.name }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restApp.location.country">Country</span></dt>
+        <dd>
+          <div *ngIf="location.country">
+            <a [routerLink]="['/country', location.country?.id, 'view']">{{ location.country?.name }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restApp.location.company">Company</span></dt>
+        <dd>
+          <div *ngIf="location.company">
+            <a [routerLink]="['/company', location.company?.id, 'view']">{{ location.company?.name }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/location', location.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="restaurantTable">
+      <h2 data-cy="restaurantTableDetailsHeading"><span jhiTranslate="restApp.restaurantTable.detail.title">Restaurant Table</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ restaurantTable.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="restApp.restaurantTable.tableCount">Table Count</span></dt>
+        <dd>
+          <span>{{ restaurantTable.tableCount }}</span>
+        </dd>
+        <dt><span jhiTranslate="restApp.restaurantTable.restaurant">Restaurant</span></dt>
+        <dd>
+          <div *ngIf="restaurantTable.restaurant">
+            <a [routerLink]="['/restaurant', restaurantTable.restaurant?.id, 'view']">{{ restaurantTable.restaurant?.name }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="restApp.restaurantTable.tables">Tables</span></dt>
+        <dd>
+          <span *ngFor="let tables of restaurantTable.tables; let last = last">
+            <a [routerLink]="['/seating-table', tables?.id, 'view']">{{ tables.tableType }}</a
+            >{{ last ? '' : ', ' }}
+          </span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/restaurant-table', restaurantTable.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+{
+  "restApp": {
+    "region": {
+      "home": {
+        "title": "Regions",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Region",
+        "createOrEditLabel": "Skapa eller ändra en Region",
+        "notFound": "No Regions found"
+      },
+      "created": "En ny Region är skapad med id {{ param }}",
+      "updated": "En Region är uppdaterad med id  {{ param }}",
+      "deleted": "En Region är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Region {{ id }}?"
+      },
+      "detail": {
+        "title": "Region"
+      },
+      "id": "ID",
+      "name": "Name",
+      "help": {
+        "name": "Region Name"
+      }
+    }
+  }
+}

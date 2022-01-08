@@ -1,0 +1,30 @@
+{
+  "restApp": {
+    "city": {
+      "home": {
+        "title": "Cities",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny City",
+        "createOrEditLabel": "Skapa eller ändra en City",
+        "notFound": "No Cities found"
+      },
+      "created": "En ny City är skapad med id {{ param }}",
+      "updated": "En City är uppdaterad med id  {{ param }}",
+      "deleted": "En City är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort City {{ id }}?"
+      },
+      "detail": {
+        "title": "City"
+      },
+      "id": "ID",
+      "name": "Name",
+      "phonePrefix": "Phone Prefix",
+      "country": "Country",
+      "help": {
+        "name": "City Name",
+        "phonePrefix": "Some cities contains phone-prefix"
+      }
+    }
+  }
+}

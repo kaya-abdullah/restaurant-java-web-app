@@ -1,0 +1,32 @@
+{
+  "name": "Customer",
+  "fields": [
+    {
+      "fieldName": "fullName",
+      "fieldType": "String",
+      "javadoc": "Customer full name"
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String",
+      "javadoc": "Customer phone number"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "javadoc": "Customer email"
+    }
+  ],
+  "relationships": [],
+  "javadoc": "Customer Table\\n\\n@author abdullahkaya",
+  "entityTableName": "customer",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220108185144"
+}

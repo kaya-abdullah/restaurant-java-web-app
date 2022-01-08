@@ -1,0 +1,155 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-country-heading" data-cy="CountryCreateUpdateHeading" jhiTranslate="restApp.country.home.createOrEditLabel">
+        Create or edit a Country
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="form-group" [hidden]="editForm.get('id')!.value == null">
+          <label class="form-control-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="restApp.country.name"
+            for="field_name"
+            [ngbTooltip]="'restApp.country.help.name' | translate"
+            >Name</label
+          >
+          <input type="text" class="form-control" name="name" id="field_name" data-cy="name" formControlName="name" />
+          <div *ngIf="editForm.get('name')!.invalid && (editForm.get('name')!.dirty || editForm.get('name')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('name')?.errors?.required" jhiTranslate="entity.validation.required">
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('name')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 100 }"
+            >
+              This field cannot be longer than 100 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="restApp.country.isoCode"
+            for="field_isoCode"
+            [ngbTooltip]="'restApp.country.help.isoCode' | translate"
+            >Iso Code</label
+          >
+          <input type="text" class="form-control" name="isoCode" id="field_isoCode" data-cy="isoCode" formControlName="isoCode" />
+          <div *ngIf="editForm.get('isoCode')!.invalid && (editForm.get('isoCode')!.dirty || editForm.get('isoCode')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isoCode')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('isoCode')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="restApp.country.phonePrefix"
+            for="field_phonePrefix"
+            [ngbTooltip]="'restApp.country.help.phonePrefix' | translate"
+            >Phone Prefix</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="phonePrefix"
+            id="field_phonePrefix"
+            data-cy="phonePrefix"
+            formControlName="phonePrefix"
+          />
+          <div *ngIf="editForm.get('phonePrefix')!.invalid && (editForm.get('phonePrefix')!.dirty || editForm.get('phonePrefix')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('phonePrefix')?.errors?.required"
+              jhiTranslate="entity.validation.required"
+            >
+              This field is required.
+            </small>
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('phonePrefix')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 10 }"
+            >
+              This field cannot be longer than 10 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label
+            class="form-control-label"
+            jhiTranslate="restApp.country.iconUrl"
+            for="field_iconUrl"
+            [ngbTooltip]="'restApp.country.help.iconUrl' | translate"
+            >Icon Url</label
+          >
+          <input type="text" class="form-control" name="iconUrl" id="field_iconUrl" data-cy="iconUrl" formControlName="iconUrl" />
+          <div *ngIf="editForm.get('iconUrl')!.invalid && (editForm.get('iconUrl')!.dirty || editForm.get('iconUrl')!.touched)">
+            <small
+              class="form-text text-danger"
+              *ngIf="editForm.get('iconUrl')?.errors?.maxlength"
+              jhiTranslate="entity.validation.maxlength"
+              [translateValues]="{ max: 4000 }"
+            >
+              This field cannot be longer than 4000 characters.
+            </small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-control-label" jhiTranslate="restApp.country.region" for="field_region">Region</label>
+          <select class="form-control" id="field_region" data-cy="region" name="region" formControlName="region">
+            <option [ngValue]="null"></option>
+            <option
+              [ngValue]="regionOption.id === editForm.get('region')!.value?.id ? editForm.get('region')!.value : regionOption"
+              *ngFor="let regionOption of regionsSharedCollection; trackBy: trackRegionById"
+            >
+              {{ regionOption.name }}
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "name": "ReservationComment",
+  "fields": [
+    {
+      "fieldName": "commentDate",
+      "fieldType": "Instant",
+      "javadoc": "comment entry date"
+    },
+    {
+      "fieldName": "operatorNote",
+      "fieldType": "String",
+      "javadoc": "Comment Detail",
+      "fieldValidateRules": ["maxlength"],
+      "fieldValidateRulesMaxlength": "4000"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "reservation",
+      "otherEntityRelationshipName": "reservationComment",
+      "relationshipName": "reservation"
+    }
+  ],
+  "javadoc": "Reservation Comment.\\n\\n@author abdullahkaya",
+  "entityTableName": "reservation_comment",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220108185143"
+}

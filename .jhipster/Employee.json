@@ -1,0 +1,76 @@
+{
+  "name": "Employee",
+  "fields": [
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "javadoc": "The firstname attribute."
+    },
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "javadoc": "The lastName attribute."
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "javadoc": "The email attribute."
+    },
+    {
+      "fieldName": "phoneNumber",
+      "fieldType": "String",
+      "javadoc": "The phoneNumber attribute."
+    },
+    {
+      "fieldName": "hireDate",
+      "fieldType": "Instant",
+      "javadoc": "The hireDate attribute."
+    },
+    {
+      "fieldName": "salary",
+      "fieldType": "Long",
+      "javadoc": "Salary of Employee"
+    },
+    {
+      "fieldName": "commissionPct",
+      "fieldType": "Long",
+      "javadoc": "The commision percentage of employee."
+    },
+    {
+      "fieldName": "identificationNumber",
+      "fieldType": "String",
+      "javadoc": "Employee Identification Number"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "job",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "job"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "manager"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "department",
+      "otherEntityRelationshipName": "employee",
+      "relationshipName": "department"
+    }
+  ],
+  "javadoc": "The Employee entity.\\n\\n@author abdullahkaya",
+  "entityTableName": "employee",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220108185140"
+}

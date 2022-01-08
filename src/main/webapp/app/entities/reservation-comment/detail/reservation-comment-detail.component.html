@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="reservationComment">
+      <h2 data-cy="reservationCommentDetailsHeading">
+        <span jhiTranslate="restApp.reservationComment.detail.title">Reservation Comment</span>
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ reservationComment.id }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="restApp.reservationComment.commentDate"
+            [ngbTooltip]="'restApp.reservationComment.help.commentDate' | translate"
+            >Comment Date</span
+          >
+        </dt>
+        <dd>
+          <span>{{ reservationComment.commentDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt>
+          <span
+            jhiTranslate="restApp.reservationComment.operatorNote"
+            [ngbTooltip]="'restApp.reservationComment.help.operatorNote' | translate"
+            >Operator Note</span
+          >
+        </dt>
+        <dd>
+          <span>{{ reservationComment.operatorNote }}</span>
+        </dd>
+        <dt><span jhiTranslate="restApp.reservationComment.reservation">Reservation</span></dt>
+        <dd>
+          <div *ngIf="reservationComment.reservation">
+            <a [routerLink]="['/reservation', reservationComment.reservation?.id, 'view']">{{ reservationComment.reservation?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/reservation-comment', reservationComment.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

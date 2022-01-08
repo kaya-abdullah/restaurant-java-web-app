@@ -1,0 +1,54 @@
+{
+  "name": "Reservation",
+  "fields": [
+    {
+      "fieldName": "reservationDate",
+      "fieldType": "Instant",
+      "javadoc": "Date and Time of Reservation"
+    },
+    {
+      "fieldName": "personCount",
+      "fieldType": "Integer",
+      "javadoc": "How many people come"
+    },
+    {
+      "fieldName": "seatingInformation",
+      "fieldType": "String",
+      "javadoc": "Reservation seating details"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "reservation",
+      "relationshipName": "operator",
+      "otherEntityField": "email"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "restaurant",
+      "otherEntityRelationshipName": "reservation",
+      "relationshipName": "restaurant",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "customer",
+      "otherEntityRelationshipName": "reservation",
+      "relationshipName": "customer",
+      "otherEntityField": "fullName"
+    }
+  ],
+  "javadoc": "Reservation Detail.\\n\\n@author abdullahkaya",
+  "entityTableName": "reservation",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220108185142"
+}

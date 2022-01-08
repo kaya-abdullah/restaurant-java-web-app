@@ -1,0 +1,30 @@
+{
+  "restApp": {
+    "seatingTable": {
+      "home": {
+        "title": "Seating Tables",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Seating Table",
+        "createOrEditLabel": "Skapa eller ändra en Seating Table",
+        "notFound": "No Seating Tables found"
+      },
+      "created": "En ny Seating Table är skapad med id {{ param }}",
+      "updated": "En Seating Table är uppdaterad med id  {{ param }}",
+      "deleted": "En Seating Table är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Seating Table {{ id }}?"
+      },
+      "detail": {
+        "title": "Seating Table"
+      },
+      "id": "ID",
+      "tableType": "Table Type",
+      "seatCount": "Seat Count",
+      "restaurantTable": "Restaurant Table",
+      "help": {
+        "tableType": "Type of Table",
+        "seatCount": "It contains number of Seat Table"
+      }
+    }
+  }
+}

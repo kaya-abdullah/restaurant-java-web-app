@@ -1,0 +1,34 @@
+{
+  "restApp": {
+    "country": {
+      "home": {
+        "title": "Countries",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Country",
+        "createOrEditLabel": "Skapa eller ändra en Country",
+        "notFound": "No Countries found"
+      },
+      "created": "En ny Country är skapad med id {{ param }}",
+      "updated": "En Country är uppdaterad med id  {{ param }}",
+      "deleted": "En Country är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Country {{ id }}?"
+      },
+      "detail": {
+        "title": "Country"
+      },
+      "id": "ID",
+      "name": "Name",
+      "isoCode": "Iso Code",
+      "phonePrefix": "Phone Prefix",
+      "iconUrl": "Icon Url",
+      "region": "Region",
+      "help": {
+        "name": "Country Name",
+        "isoCode": "ISO-codes: US, GB, TR, CN...  https:",
+        "phonePrefix": "The international phone +1, +90... https:",
+        "iconUrl": "Country flag url."
+      }
+    }
+  }
+}

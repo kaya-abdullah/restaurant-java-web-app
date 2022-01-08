@@ -1,0 +1,26 @@
+{
+  "restApp": {
+    "restaurantTable": {
+      "home": {
+        "title": "Restaurant Tables",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Restaurant Table",
+        "createOrEditLabel": "Skapa eller ändra en Restaurant Table",
+        "notFound": "No Restaurant Tables found"
+      },
+      "created": "En ny Restaurant Table är skapad med id {{ param }}",
+      "updated": "En Restaurant Table är uppdaterad med id  {{ param }}",
+      "deleted": "En Restaurant Table är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Restaurant Table {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurant Table"
+      },
+      "id": "ID",
+      "tableCount": "Table Count",
+      "restaurant": "Restaurant",
+      "tables": "Tables"
+    }
+  }
+}

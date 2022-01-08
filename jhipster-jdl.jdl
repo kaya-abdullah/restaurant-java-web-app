@@ -1,0 +1,295 @@
+/**
+ * This is region list
+ *
+ * @author abdullahkaya
+ */
+entity Region {
+	/**
+     * Region Name
+     */
+	name String required unique maxlength(100)
+}
+
+/**
+ * This is country list
+ *
+ * @author abdullahkaya
+ */
+entity Country {
+	/**
+     * Country Name
+     */
+    name String required unique maxlength(100),
+	/**
+     * ISO-codes: US, GB, TR, CN...  https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+     */
+    isoCode String required maxlength(10),
+    /**
+     * The international phone +1, +90... https://en.wikipedia.org/wiki/List_of_country_calling_codes
+     */
+    phonePrefix String required maxlength(10),
+    /**
+     * Country flag url.
+     */
+    iconUrl String maxlength(4000)
+}
+/**
+ * This is city list
+ *
+ * @author abdullahkaya
+ */
+entity City {
+	/**
+     * City Name
+     */
+	name String required maxlength(100),
+    /**
+     * Some cities contains phone-prefix
+     */
+    phonePrefix String required maxlength(10)
+}
+/**
+ * This is location list
+ *
+ * @author abdullahkaya
+ */
+entity Location {
+    /**
+     * Location specific street address
+     */
+	streetAddress String required maxlength(100),
+    /**
+     * Location postal address
+     */
+	postalCode String required maxlength(100),
+    /**
+     * State Province
+     */
+	stateProvince String maxlength(100)
+}
+/**
+ * This is restaurant chain list
+ * Organization has restaurant chain
+ * @author abdullahkaya
+ */
+entity Company {
+	/**
+     * Restaurant Chain Name
+     */
+	name String required maxlength(250)
+
+}
+/**
+ * This is branch of the Company, it means restaurants
+ *
+ * @author abdullahkaya
+ */
+entity Restaurant {
+	/**
+     * Restaurant Name, it means branch
+     */
+	name String required maxlength(100)
+
+}
+/**
+ * This is branch of the Department
+ * branch some information like phone numbers
+ * etc : operator, kitchen, accounting.
+ * @author abdullahkaya
+ */
+entity Department {
+	/**
+     * Department name of the Restaurant
+     */
+	name String required maxlength(100),
+	/**
+     * Department phone number of the Restaurant
+     */
+    phoneNumber String maxlength(20)
+}
+
+/**
+ * This is Seating Table Information
+ *
+ * @author abdullahkaya
+ */
+entity SeatingTable{
+	/**
+     * Type of Table
+     */
+	tableType String maxlength(200),
+    /**
+     * It contains number of Seat Table
+     */
+    seatCount Integer
+}
+
+/**
+ * This is table of Restaurant
+ *
+ * @author abdullahkaya
+ */
+entity RestaurantTable{
+	tableCount Integer
+}
+
+/**
+ * The Employee entity.
+ *
+ * @author abdullahkaya
+ */
+entity Employee {
+	/**
+	* The firstname attribute.
+	*/
+	firstName String,
+	/**
+	* The lastName attribute.
+	*/
+	lastName String,
+    /**
+	* The email attribute.
+	*/
+	email String
+    /**
+	* The phoneNumber attribute.
+	*/
+	phoneNumber String
+    /**
+	* The hireDate attribute.
+	*/
+	hireDate Instant
+    /**
+	* Salary of Employee
+	*/
+	salary Long
+    /**
+	* The commision percentage of employee.
+	*/
+	commissionPct Long,
+    /**
+	* Employee Identification Number
+	*/
+    identificationNumber String
+}
+
+/**
+ * Job Detail.
+ *
+ * @author abdullahkaya
+ */
+entity Job {
+    /**
+	* Employee Job Title
+	*/
+	jobTitle String
+    /**
+	* Employee Min Salary
+	*/
+	minSalary Long
+    /**
+	* Employee Max Salary
+	*/
+	maxSalary Long
+}
+
+/**
+ * Reservation Detail.
+ *
+ * @author abdullahkaya
+ */
+entity Reservation {
+    /**
+	* Date and Time of Reservation
+	*/
+	reservationDate Instant,
+    /**
+	* How many people come
+	*/
+    personCount Integer,
+    /**
+	* Reservation seating details
+	*/
+    seatingInformation String
+}
+
+/**
+ * Reservation Comment.
+ *
+ * @author abdullahkaya
+ */
+entity ReservationComment{
+    /**
+	* comment entry date
+	*/
+	commentDate Instant,
+    /**
+	* Comment Detail
+	*/
+    operatorNote String maxlength(4000)
+}
+
+/**
+ * Customer Table
+ *
+ * @author abdullahkaya
+ */
+entity Customer{
+    /**
+	* Customer full name
+	*/
+	fullName String,
+    /**
+	* Customer phone number
+	*/
+    phoneNumber String,
+    /**
+	* Customer email
+	*/
+    email String,
+
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Employee to Job{employee}
+	Department to Employee{department}
+}
+
+// defining multiple ManyToOne relationships with comments
+relationship ManyToOne {
+	Employee{manager} to Employee,
+    ReservationComment{reservation} to Reservation
+    Reservation{operator(email)} to Employee,
+    Reservation{restaurant(name)} to Restaurant,
+    Reservation{customer(fullName)} to Customer,
+}
+
+// defining multiple ManyToOne relationships with comments
+relationship ManyToMany {
+	RestaurantTable{tables(tableType)} to SeatingTable{restaurantTable}
+}
+
+// defining multiple ManyToOne relationships with comments
+relationship ManyToOne {
+ 	Country{region(name)} to Region,
+	Department{restaurant(name)} to Restaurant,
+    Restaurant{company} to Company,
+    Location{restaurant(name)} to Restaurant,
+	Location{city(name)} to City,
+    Location{country(name)} to Country,
+    RestaurantTable{restaurant(name)} to Restaurant,
+    Location{company(name)} to Company,
+    City{country(name)} to Country
+}
+
+paginate * with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

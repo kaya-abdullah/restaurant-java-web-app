@@ -1,0 +1,32 @@
+{
+  "restApp": {
+    "job": {
+      "home": {
+        "title": "Jobs",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Job",
+        "createOrEditLabel": "Skapa eller ändra en Job",
+        "notFound": "No Jobs found"
+      },
+      "created": "En ny Job är skapad med id {{ param }}",
+      "updated": "En Job är uppdaterad med id  {{ param }}",
+      "deleted": "En Job är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Job {{ id }}?"
+      },
+      "detail": {
+        "title": "Job"
+      },
+      "id": "ID",
+      "jobTitle": "Job Title",
+      "minSalary": "Min Salary",
+      "maxSalary": "Max Salary",
+      "employee": "Employee",
+      "help": {
+        "jobTitle": "Employee Job Title",
+        "minSalary": "Employee Min Salary",
+        "maxSalary": "Employee Max Salary"
+      }
+    }
+  }
+}

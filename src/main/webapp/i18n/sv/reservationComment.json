@@ -1,0 +1,30 @@
+{
+  "restApp": {
+    "reservationComment": {
+      "home": {
+        "title": "Reservation Comments",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Reservation Comment",
+        "createOrEditLabel": "Skapa eller ändra en Reservation Comment",
+        "notFound": "No Reservation Comments found"
+      },
+      "created": "En ny Reservation Comment är skapad med id {{ param }}",
+      "updated": "En Reservation Comment är uppdaterad med id  {{ param }}",
+      "deleted": "En Reservation Comment är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Reservation Comment {{ id }}?"
+      },
+      "detail": {
+        "title": "Reservation Comment"
+      },
+      "id": "ID",
+      "commentDate": "Comment Date",
+      "operatorNote": "Operator Note",
+      "reservation": "Reservation",
+      "help": {
+        "commentDate": "comment entry date",
+        "operatorNote": "Comment Detail"
+      }
+    }
+  }
+}

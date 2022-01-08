@@ -1,0 +1,27 @@
+{
+  "restApp": {
+    "company": {
+      "home": {
+        "title": "Companies",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Company",
+        "createOrEditLabel": "Skapa eller ändra en Company",
+        "notFound": "No Companies found"
+      },
+      "created": "En ny Company är skapad med id {{ param }}",
+      "updated": "En Company är uppdaterad med id  {{ param }}",
+      "deleted": "En Company är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Company {{ id }}?"
+      },
+      "detail": {
+        "title": "Company"
+      },
+      "id": "ID",
+      "name": "Name",
+      "help": {
+        "name": "Restaurant Chain Name"
+      }
+    }
+  }
+}

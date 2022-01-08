@@ -1,0 +1,39 @@
+{
+  "name": "City",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "javadoc": "City Name",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "100"
+    },
+    {
+      "fieldName": "phonePrefix",
+      "fieldType": "String",
+      "javadoc": "Some cities contains phone-prefix",
+      "fieldValidateRules": ["required", "maxlength"],
+      "fieldValidateRulesMaxlength": "10"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "country",
+      "otherEntityRelationshipName": "city",
+      "relationshipName": "country",
+      "otherEntityField": "name"
+    }
+  ],
+  "javadoc": "This is city list\\n\\n@author abdullahkaya",
+  "entityTableName": "city",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220108185133"
+}

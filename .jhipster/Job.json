@@ -1,0 +1,39 @@
+{
+  "name": "Job",
+  "fields": [
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String",
+      "javadoc": "Employee Job Title"
+    },
+    {
+      "fieldName": "minSalary",
+      "fieldType": "Long",
+      "javadoc": "Employee Min Salary"
+    },
+    {
+      "fieldName": "maxSalary",
+      "fieldType": "Long",
+      "javadoc": "Employee Max Salary"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "job",
+      "relationshipName": "employee"
+    }
+  ],
+  "javadoc": "Job Detail.\\n\\n@author abdullahkaya",
+  "entityTableName": "job",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220108185141"
+}

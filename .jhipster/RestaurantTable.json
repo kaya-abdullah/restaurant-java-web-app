@@ -1,0 +1,37 @@
+{
+  "name": "RestaurantTable",
+  "fields": [
+    {
+      "fieldName": "tableCount",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "restaurant",
+      "otherEntityRelationshipName": "restaurantTable",
+      "relationshipName": "restaurant",
+      "otherEntityField": "name"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "seatingTable",
+      "otherEntityRelationshipName": "restaurantTable",
+      "relationshipName": "tables",
+      "otherEntityField": "tableType",
+      "ownerSide": true
+    }
+  ],
+  "javadoc": "This is table of Restaurant\\n\\n@author abdullahkaya",
+  "entityTableName": "restaurant_table",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20220108185139"
+}

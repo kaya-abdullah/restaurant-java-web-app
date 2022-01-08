@@ -1,0 +1,35 @@
+{
+  "restApp": {
+    "location": {
+      "home": {
+        "title": "Locations",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Skapa en ny Location",
+        "createOrEditLabel": "Skapa eller ändra en Location",
+        "notFound": "No Locations found"
+      },
+      "created": "En ny Location är skapad med id {{ param }}",
+      "updated": "En Location är uppdaterad med id  {{ param }}",
+      "deleted": "En Location är borttagen med id  {{ param }}",
+      "delete": {
+        "question": "Är du säker på att du vill ta bort Location {{ id }}?"
+      },
+      "detail": {
+        "title": "Location"
+      },
+      "id": "ID",
+      "streetAddress": "Street Address",
+      "postalCode": "Postal Code",
+      "stateProvince": "State Province",
+      "restaurant": "Restaurant",
+      "city": "City",
+      "country": "Country",
+      "company": "Company",
+      "help": {
+        "streetAddress": "Location specific street address",
+        "postalCode": "Location postal address",
+        "stateProvince": "State Province"
+      }
+    }
+  }
+}
