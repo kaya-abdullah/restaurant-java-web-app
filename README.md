@@ -1,3 +1,43 @@
+# run on docker
+* docker run -p 8095:8095 -d kayaabdullah/restaurant
+
+* http://localhost:8095/login
+
+* user/pass: admin/admin
+*You can see the entities menu, click and enjoy 
+
+----
+# Environments :
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,api-docs
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://rest-postgresql:5432/rest
+      - SPRING_LIQUIBASE_URL=jdbc:postgresql://rest-postgresql:5432/rest
+----
+
+# Live demo : 
+* https://abdullahkayarestaurant.herokuapp.com/login
+* user/pass: admin/admin
+
+----
+
+# Source code :
+* https://github.com/kaya-abdullah/restaurant-java-web-app
+
+----
+
+# Database Information (postgresql);
+* Host : ec2-54-216-90-155.eu-west-1.compute.amazonaws.com
+* Database : ddij694n35nhc
+* User : jfdwfozullmfog
+* Port : 5432
+* Password : 5e1c3bd8714cd75cefb3c05b6e211e70f3ea3ab988fb882be0455c7402265ab9
+----
+# Dashboards;
+* URL : https://abdullahkaya.metabaseapp.com/
+* Username : abdullahk.0634@gmail.com
+* Password : 5e1c3bd8714cd75cefb3c05b6e211e70f3ea3ab988fb882be0455c7402265ab9
+
 # rest
 
 This application was generated using JHipster 7.5.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.5.0](https://www.jhipster.tech/documentation-archive/v7.5.0).
